@@ -1,0 +1,17 @@
+Scanner Class Methods
+=====================
+byte - nextBytes()
+short - nextShort()
+int - nextInt()
+long - nextLong()
+
+float - nextFloat()
+double - nextDouble()
+
+boolean - nextBoolean()
+
+char - next().charAt(0)
+char - nextLine().charAt(0)
+
+String - next()
+String - nextLine()
