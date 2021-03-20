@@ -10,17 +10,20 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
+import org.testng.asserts.SoftAssert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public ChromeDriver driver;
 	public String excelFileName;
+	public SoftAssert softAssert;
 	
 	@Parameters({"url","username","password"})
 	@BeforeMethod
 	public void preCondition(String url,String username,String password) {
-		WebDriverManager.chromedriver().setup();
+		softAssert = new SoftAssert();
+				WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
